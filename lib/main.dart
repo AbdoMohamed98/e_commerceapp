@@ -1,7 +1,8 @@
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:worldnews_app/core/navigation/router_generation_config.dart';
+
 
 
 
@@ -17,13 +18,13 @@ void main() async {
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
       fallbackLocale: Locale('en'),
-      child: Worldnews_app(),
+      child: E_commerceapp2(),
     ),
   );
 }
 
-class Worldnews_app extends StatelessWidget {
-  const Worldnews_app({super.key});
+class E_commerceapp2 extends StatelessWidget {
+  const E_commerceapp2({super.key});
 
   @override
   Widget build(BuildContext context) {
