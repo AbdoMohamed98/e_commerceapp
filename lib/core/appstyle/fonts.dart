@@ -1,5 +1,5 @@
 class Fonts {
-  static const String roboto = 'Roboto';
-  static const String lato = 'Lato';
+  static const String readexPro = 'ReadexPro';
+  
 
 }

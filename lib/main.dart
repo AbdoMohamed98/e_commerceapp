@@ -1,4 +1,6 @@
 
+
+import 'package:e_commerceapp2/core/navigation/router_generation_config.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,18 +20,18 @@ void main() async {
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
       fallbackLocale: Locale('en'),
-      child: E_commerceapp2(),
+      child: Ecommerceapp2(),
     ),
   );
 }
 
-class E_commerceapp2 extends StatelessWidget {
-  const E_commerceapp2({super.key});
+class Ecommerceapp2 extends StatelessWidget {
+  const Ecommerceapp2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 923),
+      designSize: const Size(390, 844),
       minTextAdapt: true,
       builder: (context, child) {
         return MaterialApp.router(
@@ -38,7 +40,7 @@ class E_commerceapp2 extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           debugShowCheckedModeBanner: false,
-          routerConfig: RouterGenerationConfig.router,
+          routerConfig:RouterGenerationConfig.router ,
         );
       },
      
