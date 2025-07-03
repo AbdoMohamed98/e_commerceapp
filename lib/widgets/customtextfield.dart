@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Customtextfield extends StatelessWidget {
-  const Customtextfield({super.key,this.customtextfieldcursorcolor, this.customtextfieldhinttext, this.customtextfieldhintcolor, this.textfieldborderradius,  this.textfieldbordercolor, this.textfieldfillcolor, this.suffixIcon, required String hintText, required Null Function(dynamic value) onChanged});
+  const Customtextfield({super.key,this.customtextfieldcursorcolor, this.customtextfieldhinttext, this.customtextfieldhintcolor, this.textfieldborderradius,  this.textfieldbordercolor, this.textfieldfillcolor, this.suffixIcon, required String hintText, required Null Function(dynamic value) onChanged, this.prefixIcon});
        final Color? customtextfieldcursorcolor;
        final String? customtextfieldhinttext;
         final Color?  customtextfieldhintcolor;
@@ -11,6 +11,7 @@ class Customtextfield extends StatelessWidget {
         final Color? textfieldbordercolor;
         final Color? textfieldfillcolor;
         final Widget? suffixIcon;
+         final Widget? prefixIcon;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -20,6 +21,7 @@ class Customtextfield extends StatelessWidget {
             suffixIcon:suffixIcon ,
             fillColor: textfieldfillcolor ?? Color(0xffE8ECF4), // NEW
         filled: true,
+        prefixIcon: prefixIcon,
             hintText:customtextfieldhinttext ,
             hintStyle: TextStyle(color: customtextfieldhintcolor  ),
             border: OutlineInputBorder(
