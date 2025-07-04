@@ -7,4 +7,5 @@ static String loginview = '/Loginview';
 static String myCartview = '/MyCartview';
 static String productdetails = '/Productdetails';
 static String signUpview = '/Sign_upview';
+static String logoutview = '/Logoutview';
 }

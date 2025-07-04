@@ -4,6 +4,7 @@ import 'package:e_commerceapp2/views/accountview.dart';
 import 'package:e_commerceapp2/views/addressview.dart';
 import 'package:e_commerceapp2/views/homepageview.dart';
 import 'package:e_commerceapp2/views/loginview.dart';
+import 'package:e_commerceapp2/views/logoutview.dart';
 import 'package:e_commerceapp2/views/my_cartview.dart';
 import 'package:e_commerceapp2/views/productdetails.dart';
 import 'package:e_commerceapp2/views/sign_upview.dart';
@@ -13,7 +14,7 @@ import 'package:go_router/go_router.dart';
 
 class RouterGenerationConfig {
   static GoRouter router = GoRouter(
-    initialLocation: Approutes.productdetails,
+    initialLocation: Approutes.logoutview,
     routes: [
 
       GoRoute(path: Approutes.accountview,
@@ -43,7 +44,12 @@ class RouterGenerationConfig {
         ),
         GoRoute(path: Approutes.homepageview,
         name: Approutes.homepageview,
-        builder: (context, state) => Homepageview(),) // Replace with actual HomePage
+        builder: (context, state) => Homepageview(),
+        ),
+        GoRoute(path: Approutes.logoutview,
+        name: Approutes.logoutview,
+        builder: (context, state) => Logoutview(),
+        ) // Replace with actual HomePage
 
       
     
