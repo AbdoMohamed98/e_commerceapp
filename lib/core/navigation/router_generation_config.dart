@@ -13,7 +13,7 @@ import 'package:go_router/go_router.dart';
 
 class RouterGenerationConfig {
   static GoRouter router = GoRouter(
-    initialLocation: Approutes.homepageview,
+    initialLocation: Approutes.productdetails,
     routes: [
 
       GoRoute(path: Approutes.accountview,
