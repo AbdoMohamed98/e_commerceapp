@@ -1,4 +1,6 @@
 import 'package:e_commerceapp2/core/appstyle/apptextstyle.dart';
+import 'package:e_commerceapp2/views/accountview.dart';
+import 'package:e_commerceapp2/views/my_cartview.dart';
 import 'package:e_commerceapp2/widgets/categorycart.dart';
 import 'package:e_commerceapp2/widgets/customtextfield.dart';
 import 'package:e_commerceapp2/widgets/productcart.dart';
@@ -28,20 +30,35 @@ class _HomepageviewState extends State<Homepageview> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-    });
+       if (index == 1) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyCartview()),
+    );
+  }else if (index == 2) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Accountview()),
+    );
+    }});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+        padding: EdgeInsets.only(
+          left: 24.w,
+          right: 24.w,
+          top: 60.h,
+          bottom: 20.h,
+        ),
         child: Column(
           children: [
-            SizedBox(height: 20.h),
+          
             Row(
               children: [
-                Container(
+                SizedBox(
                   height: 32.h,
                   width: 128.w,
                   child: Text('Discover', style: Apptextstyle.headlines),
@@ -77,9 +94,10 @@ class _HomepageviewState extends State<Homepageview> {
             ),
             SizedBox(height: 20.h),
             SizedBox(
-              height: 500.h,
+              
               width: double.infinity,
               child: GridView(
+                
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -90,6 +108,10 @@ class _HomepageviewState extends State<Homepageview> {
                 ),
                 children: const [
                   Productcart(),
+                  Productcart(),
+                  Productcart(),
+                  Productcart(),
+                   Productcart(),
                   Productcart(),
                   Productcart(),
                   Productcart(),
@@ -112,12 +134,15 @@ class _HomepageviewState extends State<Homepageview> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Favorites',
+            icon: Icon(Icons.shopping_cart),
+            label: 'Shopping cart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
+
+            icon: Icon(Icons.account_circle_outlined,
+            
+            ),
+            label: 'Acount',
           ),
         ],
       ),

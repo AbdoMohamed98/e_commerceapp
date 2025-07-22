@@ -1,9 +1,11 @@
 import 'package:e_commerceapp2/core/appstyle/apptextstyle.dart';
 import 'package:e_commerceapp2/core/appstyle/colors.dart';
+import 'package:e_commerceapp2/core/navigation/approutes.dart';
 import 'package:e_commerceapp2/widgets/customelevatedbutton.dart';
 import 'package:e_commerceapp2/widgets/customtextfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Loginview extends StatelessWidget {
   const Loginview({super.key});
@@ -31,7 +33,7 @@ class Loginview extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   )),
                 const SizedBox(height: 5),
-                Text('it\'s great to see you again', style: Apptextstyle.subheadlines),
+                Text('it\'s great to see you again.', style: Apptextstyle.subheadlines),
                 const SizedBox(height: 20),
                 Text('username', style: Apptextstyle.bodytext),
                 const SizedBox(height: 10),
@@ -53,6 +55,7 @@ class Loginview extends StatelessWidget {
                 Customelevatedbutton(
                   onpressed: () {
                     // Handle login action
+                    context.pushNamed(Approutes.homepageview);
                   },
                   buttontext: 'Sign in',
                   buttontextcolor: const Color(0xffFFFFFF),
@@ -60,7 +63,25 @@ class Loginview extends StatelessWidget {
                   buttonhight: 50.h,
                   buttonwidth: 325.w,
                   buttonborderradius: 10.r,
-                )
+                ),
+                Padding(
+                  padding:  EdgeInsets.only(top: 363.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('don\'t have an account?', style: Apptextstyle.subheadlines),
+                      GestureDetector(
+                        onTap: () {
+                          // Navigate to sign-up view
+                          context.pushNamed(Approutes.signUpview);
+                        },
+                        child: Text('Join',style: Apptextstyle.bodytext.copyWith(
+                          decoration: TextDecoration.underline,
+                        )),
+                      )
+                    ],
+                  ),
+                ),
 
               ],
             ),
