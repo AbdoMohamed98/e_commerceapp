@@ -2,7 +2,7 @@ import 'package:e_commerceapp2/core/appstyle/apptextstyle.dart';
 import 'package:e_commerceapp2/views/accountview.dart';
 import 'package:e_commerceapp2/views/my_cartview.dart';
 import 'package:e_commerceapp2/widgets/categorycart.dart';
-import 'package:e_commerceapp2/widgets/customtextfield.dart';
+import 'package:e_commerceapp2/widgets/customtextformfield.dart';
 import 'package:e_commerceapp2/widgets/productcart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +71,13 @@ class _HomepageviewState extends State<Homepageview> {
                 SizedBox(
                   width: 281.w,
                   height: 52.h,
-                  child: Customtextfield(
+                  child: Customtextformfield(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter a search term';
+                      }
+                      return null;
+                    },
                     customtextfieldhinttext: 'search for clothes...',
                     prefixIcon: const Icon(Icons.search),
                     onChanged: (value) {},
