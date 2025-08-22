@@ -25,6 +25,7 @@ class _SignUpviewState extends State<SignUpview> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +132,7 @@ class _SignUpviewState extends State<SignUpview> {
                     Text('confirm password', style: Apptextstyle.bodytext),
                     SizedBox(height: 10),
                     Customtextformfield(
-                      controller: passwordController,
+                      controller: confirmPasswordController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please confirm your password';
@@ -173,7 +174,7 @@ class _SignUpviewState extends State<SignUpview> {
                           });
                           try {
                             final credential = await FirebaseAuth.instance
-                                .signInWithEmailAndPassword(
+                                .createUserWithEmailAndPassword(
                                   email: emailAddress,
                                   password: password,
                                 );

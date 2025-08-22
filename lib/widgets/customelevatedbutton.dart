@@ -12,7 +12,7 @@ class Customelevatedbutton extends StatelessWidget {
     this.buttoncolor, 
     this.buttonhight,
     this.buttonwidth,
-    this.buttonborderradius,
+    this.buttonborderradius, this.icon,
   });
 
   final void Function()? onpressed;
@@ -22,6 +22,8 @@ class Customelevatedbutton extends StatelessWidget {
   final double? buttonhight;
   final double? buttonwidth;
   final double? buttonborderradius;
+  final IconData? icon;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +41,21 @@ class Customelevatedbutton extends StatelessWidget {
           ),
         ),
       ),
-      child: Text(
+      child: Row(
+    mainAxisSize: MainAxisSize.min, // keeps button compact
+    children:[
+      Text(
         buttontext ?? '',
-        style: TextStyle(
-          color: buttontextcolor ?? const Color(0xffFFFFFF),
-          fontSize: 16.sp,
-        ),
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: buttontextcolor ?? Colors.white),
       ),
+      SizedBox(width: 8), 
+       if (icon != null) ...[
+            const SizedBox(width: 8),
+            Icon(icon, size: 18, color: buttontextcolor ?? Colors.white),
+          ],
+    ],
+  ),
+      
     );
   }
 }

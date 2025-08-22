@@ -119,13 +119,13 @@ class _LoginviewState extends State<Loginview> {
             email: emailAddress,
             password: password,
           );
-          print( credential.user?.email);
+        
       
           
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Login successful!')),
           );
-          context.pushNamed(Approutes.homepageview);
+          context.goNamed(Approutes.homepageview);
           emailController.clear();
           passwordController.clear();
       
@@ -155,12 +155,13 @@ class _LoginviewState extends State<Loginview> {
               SnackBar(content: Text('An error occurred: ${e.message}')),
             );
           }
-        } catch (e) {
-          
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Something went wrong: $e')),
-          );
-        }
+        }  catch (e, stack) {
+  print("❌ General Error: $e");
+  print("📌 Stack Trace: $stack");
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Something went wrong: $e')),
+  );
+}
 
         setState(() {
           isloading = false;
