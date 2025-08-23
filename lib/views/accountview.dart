@@ -1,35 +1,16 @@
 import 'package:e_commerceapp2/core/appstyle/apptextstyle.dart';
+import 'package:e_commerceapp2/views/homepageview.dart';
 
 import 'package:e_commerceapp2/views/my_cartview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Accountview extends StatefulWidget {
+class Accountview extends StatelessWidget {
   const Accountview({super.key});
+  
+  
 
-  @override
-  State<Accountview> createState() => _AccountviewState();
-}
-
-class _AccountviewState extends State<Accountview> {
-  int _selectedIndex = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      if (index == 1) {
-        Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => MyCartview()),
-    );
-      } else if (index == 2) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Accountview()),
-        );
-      }
-    });
-  }
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
      body: SingleChildScrollView(
@@ -262,26 +243,29 @@ class _AccountviewState extends State<Accountview> {
          ),
        ),
      ),
-     bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
-      ),
+//  bottomNavigationBar: BottomNavigationBar(
+//         currentIndex: _selectedIndex,
+//         onTap: _onItemTapped,
+//         selectedItemColor: Colors.black,
+//         unselectedItemColor: Colors.grey,
+//         items: const [
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.shopping_cart),
+//             label: 'Shopping cart',
+//           ),
+//           BottomNavigationBarItem(
+
+//             icon: Icon(Icons.account_circle_outlined,
+            
+//             ),
+//             label: 'Acount',
+//           ),
+//         ],
+//       ),
     ); 
   }
 }

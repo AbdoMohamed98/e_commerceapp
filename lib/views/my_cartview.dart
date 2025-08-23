@@ -7,31 +7,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MyCartview extends StatefulWidget {
+class MyCartview extends StatelessWidget {
   const MyCartview({super.key});
 
-  @override
-  State<MyCartview> createState() => _MyCartviewState();
-}
-
-class _MyCartviewState extends State<MyCartview> {
-   int _selectedIndex = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      if (index == 1) {
-        Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => MyCartview()),
-    );
-      } else if (index == 2) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Accountview()),
-        );
-      }
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,26 +57,29 @@ class _MyCartviewState extends State<MyCartview> {
           ),
         ),
       ) ,
-      bottomNavigationBar:  BottomNavigationBar(
-              currentIndex: _selectedIndex,
-              onTap: _onItemTapped,
-              selectedItemColor: Colors.black,
-              unselectedItemColor: Colors.grey,
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart),
-                  label: 'Favorites',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_circle_outlined),
-                  label: 'Profile',
-                ),
-              ],
-            ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _selectedIndex,
+      //   onTap: _onItemTapped,
+      //   selectedItemColor: Colors.black,
+      //   unselectedItemColor: Colors.grey,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.shopping_cart),
+      //       label: 'Shopping cart',
+      //     ),
+      //     BottomNavigationBarItem(
+
+      //       icon: Icon(Icons.account_circle_outlined,
+            
+      //       ),
+      //       label: 'Acount',
+      //     ),
+      //   ],
+      // ),
 
 
     );
