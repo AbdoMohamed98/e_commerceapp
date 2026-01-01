@@ -1,5 +1,5 @@
 import 'package:e_commerceapp2/core/appstyle/apptextstyle.dart';
-import 'package:e_commerceapp2/widgets/customelevatedbutton.dart';
+
 import 'package:e_commerceapp2/widgets/locationwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

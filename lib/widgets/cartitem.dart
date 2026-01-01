@@ -1,6 +1,5 @@
 import 'package:e_commerceapp2/core/appstyle/apptextstyle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Cartitem extends StatelessWidget {
@@ -10,7 +9,7 @@ class Cartitem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only( top: 10, bottom: 10),
-      child: Container(
+      child: SizedBox(
           width: 342.w,
           height: 107.h,
           child: Padding(

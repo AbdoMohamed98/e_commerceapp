@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Productprice extends StatelessWidget {
   const Productprice({super.key, required this.product, required this.price});
